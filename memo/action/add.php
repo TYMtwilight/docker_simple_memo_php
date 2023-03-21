@@ -18,7 +18,7 @@
           $statement->bindParam(":title", $title);
           $statement->execute();
       }
-
+      // インサートした後に、セッションに選択中のメモ情報を作ってあげる。
       $_SESSION['select_memo'] = [
         'id' => $database_handler -> lastInsertId(),
         'title' => $title,
